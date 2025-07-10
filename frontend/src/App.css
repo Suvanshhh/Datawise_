@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -8,7 +8,7 @@ html, body {
   color: #222;
 }
 
-/* Container for main content */
+
 .app-container {
   max-width: 800px;
   margin: 2em auto;
@@ -18,7 +18,7 @@ html, body {
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
-/* Headings */
+
 h1, h2, h3 {
   color: #1a365d;
   margin-top: 0;
@@ -39,7 +39,7 @@ h3 {
   margin-bottom: 0.5em;
 }
 
-/* Forms */
+
 form {
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +83,7 @@ form .error, .error {
   width: 100%;
 }
 
-/* Dataset List */
+
 ul {
   list-style: none;
   padding: 0;
@@ -121,7 +121,6 @@ li button:hover {
   background: #b91c1c;
 }
 
-/* Dataset details and logs */
 .dataset-details {
   margin-top: 2em;
   background: #f4f8fb;
