@@ -2,9 +2,19 @@ import os
 from pymongo import MongoClient
 from datetime import datetime
 from bson import ObjectId
+from urllib.parse import urlparse
 
-client = MongoClient(os.environ.get("MONGO_URI"))
-db = client.get_default_database()
+mongo_uri = os.environ.get("MONGO_URI")
+client = MongoClient(mongo_uri)
+
+def get_db_name(uri):
+    parsed = urlparse(uri)
+    if parsed.path and parsed.path != '/':
+        return parsed.path.lstrip('/')
+    return os.environ.get("MONGO_DB_NAME", "datawise")
+
+db_name = get_db_name(mongo_uri)
+db = client[db_name]
 datasets = db.datasets
 
 def create_dataset(data):
